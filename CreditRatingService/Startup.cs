@@ -32,6 +32,7 @@ namespace CreditRatingService
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGrpcService<GreeterService>();
+                endpoints.MapGrpcService<CreditRatingCheckService>();
 
                 endpoints.MapGet("/", async context =>
                 {
