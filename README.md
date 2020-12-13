@@ -9,9 +9,9 @@ dotnet new console -o CreditRatingClient
 
 ## Commands Create gRPC Client
 
-dotnet add CreditRatingClient.csproj package Grpc.Net.Client
-dotnet add CreditRatingClient.csproj package Google.Protobuf
-dotnet add CreditRatingClient.csproj package Grpc.Tools
+dotnet add CreditRatingClient.csproj package Grpc.Net.Client <br />
+dotnet add CreditRatingClient.csproj package Google.Protobuf <br />
+dotnet add CreditRatingClient.csproj package Grpc.Tools <br />
 
 ## Test exmaple.
 Please do dotnet run in GrpcServices (server). 
