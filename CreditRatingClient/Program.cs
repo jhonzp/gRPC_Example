@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using CreditRatingService;
+
 using Grpc.Net.Client;
 
 namespace CreditRatingClient
@@ -16,6 +17,13 @@ namespace CreditRatingClient
             var reply = await client.CheckCreditRequestAsync(creditRequest);
 
             Console.WriteLine($"Credit for customer {creditRequest.CustomerId} {(reply.IsAccepted ? "approved" : "rejected")}!");
+
+            var client2 = new CreditRatingService.Greeter.GreeterClient(channel);
+            var helloRequest = new HelloRequest { Name = "Jhon" };
+            var replyHello = await client2.SayHelloAsync(helloRequest);
+
+             Console.WriteLine($"GRPC Hello  {replyHello.Message}!");
+
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
